@@ -12,6 +12,9 @@ app.use(cors())
 //bodyparser middleware
 app.use(express.urlencoded({extended: false}))
 
+//controller middleware
+app.use('/api', require('./controllers/users'))
+
 app.listen(process.env.PORT || 8000, () => {
     console.log('listening on port 8k bb')
 })
